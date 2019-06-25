@@ -10,7 +10,7 @@
       "sizes": "152x152",
       "type": "image/png"
     }],  
-  "start_url": "/index.html",
+  "start_url": "pwa-dst7/index.html",
   "display": "standalone",
   "background_color": "#FEEAE6",
   "theme_color": "#FFCC33"
