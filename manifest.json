@@ -10,7 +10,7 @@
       "sizes": "152x152",
       "type": "image/png"
     }],  
-  "start_url": "/dst7/index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#FEEAE6",
   "theme_color": "#FFCC33"
