@@ -21,16 +21,7 @@ var filesToCache = [
   '/polyfills.js',
   '/runtime.js',
   '/styles.js',
-  '/vendor.js',
-  '/main.js.map',
-  '/polyfills.js.map',
-  '/runtime.js.map',
-  '/styles.js.map',
-  '/vendor.js.map',
-  '/assets/css/bootstrap.min.js',
-  '/assets/css/bootstrap.min.css',
-  '/assets/en.json',
-  '/assets/fr.json'
+  '/vendor.js'
 ];
 
 self.addEventListener('install', function(e) {
