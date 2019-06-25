@@ -1,0 +1,17 @@
+{
+  "name": "DST7",
+  "short_name": "DST7",
+  "icons": [{
+      "src": "icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }],  
+  "start_url": "/gdv2/index.html",
+  "display": "standalone",
+  "background_color": "#FEEAE6",
+  "theme_color": "#FFCC33"
+}
