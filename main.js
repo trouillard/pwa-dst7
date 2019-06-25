@@ -198,22 +198,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _dst_dst_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dst/dst.component */ "./src/app/dst/dst.component.ts");
-/* harmony import */ var _zone_zone_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../zone/zone.component */ "./src/app/zone/zone.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _dst_dst_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../dst/dst.component */ "./src/app/dst/dst.component.ts");
+/* harmony import */ var _zone_zone_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../zone/zone.component */ "./src/app/zone/zone.component.ts");
+
 
 
 
 
 
 var routes = [
-    { path: 'dst', component: _dst_dst_component__WEBPACK_IMPORTED_MODULE_3__["DstComponent"] },
-    { path: 'zone', component: _zone_zone_component__WEBPACK_IMPORTED_MODULE_4__["ZoneComponent"] }
+    { path: 'dst', component: _dst_dst_component__WEBPACK_IMPORTED_MODULE_4__["DstComponent"] },
+    { path: 'zone', component: _zone_zone_component__WEBPACK_IMPORTED_MODULE_5__["ZoneComponent"] }
 ];
 var CoreRoutingModule = /** @class */ (function () {
     function CoreRoutingModule() {
     }
     CoreRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            providers: [
+                {
+                    provide: _angular_common__WEBPACK_IMPORTED_MODULE_3__["APP_BASE_HREF"], useValue: '/pwa-dst7'
+                }
+            ],
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes)
             ],
