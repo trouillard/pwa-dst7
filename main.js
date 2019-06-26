@@ -208,9 +208,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    //  { path: 'dst', component: DstComponent},
-    { path: 'zone', component: _zone_zone_component__WEBPACK_IMPORTED_MODULE_5__["ZoneComponent"] },
     { path: '', component: _dst_dst_component__WEBPACK_IMPORTED_MODULE_4__["DstComponent"] },
+    { path: 'zone', component: _zone_zone_component__WEBPACK_IMPORTED_MODULE_5__["ZoneComponent"] }
 ];
 var CoreRoutingModule = /** @class */ (function () {
     function CoreRoutingModule() {
