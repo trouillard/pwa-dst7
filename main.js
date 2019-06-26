@@ -79,7 +79,7 @@ var AppComponent = /** @class */ (function () {
                 _this.headerFooter = true;
             }
         });
-        this.router.navigate(["dst"]);
+        this.router.navigate([""]);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
@@ -208,8 +208,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var routes = [
-    { path: 'dst', component: _dst_dst_component__WEBPACK_IMPORTED_MODULE_4__["DstComponent"] },
-    { path: 'zone', component: _zone_zone_component__WEBPACK_IMPORTED_MODULE_5__["ZoneComponent"] }
+    //  { path: 'dst', component: DstComponent},
+    { path: 'zone', component: _zone_zone_component__WEBPACK_IMPORTED_MODULE_5__["ZoneComponent"] },
+    { path: '', component: _dst_dst_component__WEBPACK_IMPORTED_MODULE_4__["DstComponent"] },
 ];
 var CoreRoutingModule = /** @class */ (function () {
     function CoreRoutingModule() {
