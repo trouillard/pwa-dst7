@@ -21,11 +21,7 @@ var filesToCache = [
   '/polyfills.js',
   '/runtime.js',
   '/styles.js',
-  '/vendor.js',
-  '/en.json',
-  '/fr.json',
-  'en_GB.json',
-  'fr_FR.json'
+  '/vendor.js'
 ];
 
 self.addEventListener('install', function(e) {
