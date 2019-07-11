@@ -448,7 +448,6 @@ var DstComponent = /** @class */ (function () {
         this.formattage();
     };
     DstComponent.prototype.modificationReference = function (aDateDST) {
-        // ZZZ console.log(JSON.stringify(aDateDST));
         this.dateReferenceDST = aDateDST;
         this.formattage();
     };
@@ -757,7 +756,7 @@ module.exports = "<div class=\"page\">\r\n  \r\n  <div mat-dialog-title class=\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"titre\">\n<!--\n\n  <div class=\"titre\">\n    <b>{{label_titre}}</b>\n    <span *ngIf=\"(visible) && (zone != undefined)\">&nbsp;(GMT+{{zone.heures}})</span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (zone.dst != null) && (dst == true)\">&nbsp;<a (click)=\"changementDetail()\"><img src=\"assets/dston.png\"></a></span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (zone.dst != null) && (dst == false)\">&nbsp;<a (click)=\"changementDetail()\"><img src=\"assets/dstoff.png\"></a></span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (zone.dst == null)\">&nbsp;<img src=\"assets/nodst.png\"></span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (defaut)\">&nbsp;<a (click)=\"memorisationZone()\"><img src=\"assets/pointer.png\"/></a></span>\n  </div>\n-->\n  <br>\n  <div *ngIf=\"visible\">\n      <form>\n          <mat-form-field>\n            <input type=\"text\" placeholder=\"{{label_endroit}}\" aria-label=\"Number\" matInput [formControl]=\"zoneControl\" [matAutocomplete]=\"auto\">\n            <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"changeZone($event)\">\n              <mat-option *ngFor=\"let nomZone of filteredListeNomZones | async\" [value]=\"nomZone\">\n                {{nomZone}}\n              </mat-option>\n            </mat-autocomplete>\n          </mat-form-field>\n          &nbsp;&nbsp;\n          <button mat-raised-button color=\"primary\" (click)=\"zoomZone()\">\n              <mat-icon>zoom_in</mat-icon>\n          </button>\n        </form>\n  </div>\n\n<!--\n  <div *ngIf=\"visible\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>{{label_endroit}}</mat-label>\n      <mat-select [(ngModel)]=\"dateDST.nomZone\" (selectionChange)=\"changeZone($event)\">\n        <mat-option *ngFor=\"let nom of listeNomsZones; let j = index\" [value]=\"nom\"><span translate=\"{{nom}}\"></span></mat-option>\n      </mat-select>\n    </mat-form-field>\n  </div>\n-->\n  \n  <div *ngIf=\"visible\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label style=\"display: inline-block;font-size: 15px;margin: 0px;padding: 0px;\">{{label_heure}}</mat-label>\n      <input matInput type=\"datetime-local\" [(ngModel)]=\"dateLocaleFormattee\" readonly=\"{{readOnly}}\">\n    </mat-form-field>\n  </div>\n\n  <div *ngIf=\"(visible) && (detail)\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>DST On</mat-label>\n      <input matInput type=\"datetime-local\" [(ngModel)]=\"dateDstOnFormattee\" readonly=\"true\">\n    </mat-form-field>\n  </div>\n\n  <div *ngIf=\"(visible) && (detail)\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>DST Off</mat-label>\n      <input matInput type=\"datetime-local\" [(ngModel)]=\"dateDstOffFormattee\" readonly=\"true\">\n    </mat-form-field>\n  </div>\n  <br>\n\n  </div>"
+module.exports = "<div class=\"titre\">\n<!--\n\n  <div class=\"titre\">\n    <b>{{label_titre}}</b>\n    <span *ngIf=\"(visible) && (zone != undefined)\">&nbsp;(GMT+{{zone.heures}})</span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (zone.dst != null) && (dst == true)\">&nbsp;<a (click)=\"changementDetail()\"><img src=\"assets/dston.png\"></a></span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (zone.dst != null) && (dst == false)\">&nbsp;<a (click)=\"changementDetail()\"><img src=\"assets/dstoff.png\"></a></span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (zone.dst == null)\">&nbsp;<img src=\"assets/nodst.png\"></span>\n    <span *ngIf=\"(visible) && (zone != undefined) && (defaut)\">&nbsp;<a (click)=\"memorisationZone()\"><img src=\"assets/pointer.png\"/></a></span>\n  </div>\n-->\n  <br>\n  <div *ngIf=\"visible\">\n      <form>\n          <mat-form-field>\n            <input type=\"text\" placeholder=\"{{label_endroit}}\" aria-label=\"Number\" matInput [formControl]=\"zoneControl\" [matAutocomplete]=\"auto\">\n            <mat-autocomplete #auto=\"matAutocomplete\" (optionSelected)=\"changeZone($event)\">\n              <mat-option *ngFor=\"let nomZone of filteredListeNomZones | async\" [value]=\"nomZone\">\n                {{nomZone}}\n              </mat-option>\n            </mat-autocomplete>\n          </mat-form-field>\n          &nbsp;&nbsp;\n          <button *ngIf=\"defaut\" mat-raised-button color=\"secondary\" (click)=\"memorisationZone()\">\n              <mat-icon>save</mat-icon>\n          </button>\n          <button *ngIf=\"!defaut\"  mat-button color=\"secondary\">\n            <mat-icon></mat-icon>\n        </button>\n        </form>\n  </div>\n\n<!--\n  <div *ngIf=\"visible\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>{{label_endroit}}</mat-label>\n      <mat-select [(ngModel)]=\"dateDST.nomZone\" (selectionChange)=\"changeZone($event)\">\n        <mat-option *ngFor=\"let nom of listeNomsZones; let j = index\" [value]=\"nom\"><span translate=\"{{nom}}\"></span></mat-option>\n      </mat-select>\n    </mat-form-field>\n  </div>\n-->\n  \n  <div *ngIf=\"visible\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label style=\"display: inline-block;font-size: 15px;margin: 0px;padding: 0px;\">{{label_heure}}</mat-label>\n      <input matInput type=\"datetime-local\" [(ngModel)]=\"dateLocaleFormattee\" readonly=\"{{readOnly}}\">\n    </mat-form-field>\n    &nbsp;&nbsp;\n    <button mat-raised-button color=\"secondary\" (click)=\"zoomZone()\">\n        <mat-icon>zoom_in</mat-icon>\n    </button>\n  </div>\n<!--\n  <div *ngIf=\"(visible) && (detail)\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>DST On</mat-label>\n      <input matInput type=\"datetime-local\" [(ngModel)]=\"dateDstOnFormattee\" readonly=\"true\">\n    </mat-form-field>\n  </div>\n\n  <div *ngIf=\"(visible) && (detail)\">\n    <mat-form-field appearance=\"outline\">\n      <mat-label>DST Off</mat-label>\n      <input matInput type=\"datetime-local\" [(ngModel)]=\"dateDstOffFormattee\" readonly=\"true\">\n    </mat-form-field>\n  </div>\n  <br>\n-->\n\n  </div>"
 
 /***/ }),
 
@@ -846,11 +845,6 @@ var ZoneComponent = /** @class */ (function () {
         this.formattageDates();
         this.modification.emit(this.dateDST);
     };
-    /*
-      zoomZone(): void {
-        alert("Voici le détail");
-      }
-    */
     ZoneComponent.prototype.filtrageZoneSaisie = function () {
         var _this = this;
         this.filteredListeNomZones = this.zoneControl.valueChanges
@@ -1076,12 +1070,14 @@ var ZoneComponent = /** @class */ (function () {
                     }
                     else {
                         this.dateDST.dst = false;
+                        this.dateDST.dateLocaleSansDST = this.dateDST.dateLocale;
                     }
                 }
                 // CAS HEMISPHERE SUD
                 if (this.dateDST.dateDSToff < this.dateDST.dateDSTon) {
                     if ((this.dateDST.dateLocale < this.dateDST.dateDSTon) && (this.dateDST.dateLocale >= this.dateDST.dateDSToff)) {
                         this.dateDST.dst = false;
+                        this.dateDST.dateLocaleSansDST = this.dateDST.dateLocale;
                     }
                     else {
                         this.dateDST.dateUTC = new Date(this.dateDST.dateUTC.getTime() - 3600000);
