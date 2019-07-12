@@ -417,7 +417,7 @@ var DstComponent = /** @class */ (function () {
         dates.push(this.dateReferenceDST);
         dates.push(this.dateRechercheDST);
         var dialogRef = this.dialog.open(PopUpDetailDST, {
-            width: '100%',
+            width: 'auto',
             data: {
                 dateReferenceDST: this.dateReferenceDST,
                 dateRechercheDST: this.dateRechercheDST,
@@ -823,7 +823,7 @@ var ZoneComponent = /** @class */ (function () {
     }
     ZoneComponent.prototype.zoomZone = function () {
         var dialogRef = this.dialog.open(PopUpDetailZone, {
-            width: '100%',
+            width: 'auto',
             data: {
                 date: this.dateDST,
                 zone: this.zone,
